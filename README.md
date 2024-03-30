@@ -15,5 +15,6 @@ Raziex Is A Discord Bot For Text Generation, Image Generation And A Chatbot And 
  - [Add Raziex - Admin](https://discord.com/oauth2/authorize?client_id=1205684566292041800&permissions=8&scope=bot+applications.commands)
  - [Add Raziex - Non Admin](https://discord.com/oauth2/authorize?client_id=1205684566292041800&permissions=10982197165175&scope=bot+applications.commands)
 
+# Top.gg Stats
 
-![Discord Bots](https://top.gg/api/widget/upvotes/1205684566292041800.svg)
+![Discord Bots](https://top.gg/api/widget/upvotes/1205684566292041800.svg) ![Discord Bots](https://top.gg/api/widget/servers/1205684566292041800.svg)
