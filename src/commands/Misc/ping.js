@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(interaction) {
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle(`📶 | Bot Ping`)
             .setDescription(`\`\`\`${interaction.client.ws.ping}ms\`\`\``)
             .setTimestamp();

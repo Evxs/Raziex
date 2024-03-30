@@ -8,6 +8,15 @@ module.exports = {
     name: 'messageCreate',
     execute: async (message) => {
         try {
+
+
+
+
+
+
+
+
+
             if (message.author.bot || message.author.id === message.client.user.id) {
                 return;
             } 
@@ -17,15 +26,29 @@ module.exports = {
                 return;
             }           
             let prompt = message.content;
-            if (prompt.toLowerCase().includes('swipe')) {
-                prompt = prompt.replace(/swipe/gi, '');
+            if (prompt.toLowerCase().includes('raziex')) {
+                prompt = prompt.replace(/raziex/gi, '');
             } else {
                 return;
-            }                       
+            } 
+            
+            const user = message.author.id;
+            const blacklistedUsers = JSON.parse(fs.readFileSync('./blacklisted.json'));
+            if (blacklistedUsers.includes(user)) {
+            const errorEmbed = new EmbedBuilder()
+                .setDescription('<:error:1223523541987885117> | **You Are Blacklisted And Cannot Use This Chat Bot Due To Abuse, Believe This Was A Mistake? Join The [Support Server](https://discord.gg/3enpEZNP5s)**')
+                .setColor('#301934');
+            return;
+            }
+
+
+
+
+
             const data = {
-                'model': '', 
+                'model': 'gpt-3.5-turbo', 
                 'messages': [
-                    {'role': 'system', 'name': 'instructions', 'content': ``},
+                    {'role': 'system', 'name': 'instructions', 'content': `Your name is swipe, you are a helpful assistant to help anyone out, who is very chill and relaxed and asnwers all questions`},
                     {'role': 'user', 'content': prompt}
                 ],
                 'stream': false
@@ -42,14 +65,14 @@ module.exports = {
             }
             const firstResponseContent = response.data.choices[0].message.content;
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setFooter({ text: 'Powered By Shard AI | © Swipe 2024 - 2024', iconURL: 'https://cdn.discordapp.com/attachments/1167267080861667418/1222011257037525123/ico.png?ex=6614a9ab&is=660234ab&hm=a5ecb21c6091f6796e1afc1bd2e428127a461a48312dda59120a3bdd69124b22&' })
+                .setColor('#301934')
+                .setFooter({ text: 'Powered By Shard AI | © Raziex 2024 - 2024', iconURL: 'https://cdn.discordapp.com/attachments/1167267080861667418/1222011257037525123/ico.png?ex=6614a9ab&is=660234ab&hm=a5ecb21c6091f6796e1afc1bd2e428127a461a48312dda59120a3bdd69124b22&' })
                 .setDescription(`${firstResponseContent}`); 
             await message.reply({ embeds: [embed], ephemeral: false });
             response.data.choices.slice(1).forEach(choice => {
                 const subsequentContent = choice.message.content;
                 const embed = new EmbedBuilder()
-                .setColor('White')
+                .setColor('#301934')
                 .setFooter({ text: 'Powered By Shard AI', iconURL: 'https://cdn.discordapp.com/attachments/1167267080861667418/1222011257037525123/ico.png?ex=6614a9ab&is=660234ab&hm=a5ecb21c6091f6796e1afc1bd2e428127a461a48312dda59120a3bdd69124b22&' })
                 .setDescription(`${subsequentContent}`);
                 message.channel.send({ embeds: [embed], ephemeral: false }); 
@@ -57,9 +80,9 @@ module.exports = {
         } catch (error) {
             console.log('Error:', error);
             const errorEmbed = new EmbedBuilder()
-                .setDescription('<:emoji_27:1215417390880268390> | **Uh Uh, An Error Has Occured, Believe This Was A Mistake? Join The [Support Server](https://discord.gg/3enpEZNP5s)**')
-                .setColor('White')
-            message.channel.send({ embeds: [errorEmbed] });
+                .setDescription('<:error:1223523541987885117> | **Uh Uh, An Error Has Occured, Believe This Was A Mistake? Join The [Support Server](https://discord.gg/3enpEZNP5s)**')
+                .setColor('#301934')
+            message.reply({ embeds: [errorEmbed] });
         }
     }
 };

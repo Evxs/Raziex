@@ -15,7 +15,7 @@ module.exports = {
 
         // Create confirmation embed
         const confirmationEmbed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle('Suggestion Received')
             .setDescription(`Your suggestion "${suggestion}" has been noted!`);
 
@@ -34,7 +34,7 @@ module.exports = {
 
         // Create suggestion embed
         const suggestionEmbed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle('New Suggestion')
             .setDescription(suggestion)
             .setAuthor({ name: `Requested By: ${interaction.user.tag}`, text: `Requested By: ${interaction.user.tag}`})

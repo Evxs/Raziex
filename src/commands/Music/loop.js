@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('loop')
-        .setDescription('Set the loop mode.')
+        .setDescription('🎵 | Setup Looping For The Player')
         .addStringOption(option =>
             option.setName('type')
                 .setDescription('Select the loop mode.')
@@ -20,16 +20,16 @@ module.exports = {
         // Check if user is in a voice channel
         if (!voiceChannel) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **You Need To Be In A VC To Play Music.**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **You Need To Be In A VC To Play Music.**`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         const memberr = interaction.guild.members.cache.get(interaction.member.user?.id);
         // Check if the bot is in a voice channel and if it's not the same as the user's voice channel
         if (interaction.guild.members.me.voice.channel && interaction.guild.members.me.voice.channelId !== member.voice.channelId) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **You Need To Be In The Same VC As Me.**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **You Need To Be In The Same VC As Me.**`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
@@ -53,8 +53,8 @@ module.exports = {
         mode = queue.setRepeatMode(mode);
         const modeText = mode ? (mode === 2 ? 'Repeat Queue' : 'Repeat Song') : 'Off';
         const sembed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_28:1215417406433009694> | **Set Loop Mode To \`${modeText}\`**`);
+                .setColor('#301934')
+                .setDescription(`<:music:1223525751765336074> | **Set Loop Mode To \`${modeText}\`**`);
         await interaction.reply({ embeds: [sembed], ephemeral: false });
     }
 };

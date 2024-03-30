@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(interaction) {
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle(`Support Server`)
             .setDescription(`In Need Of Help? Join The Server Using The Button Below!`)
             .setTimestamp();

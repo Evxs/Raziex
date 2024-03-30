@@ -18,24 +18,24 @@ module.exports = {
             voiceChannel = targetChannel;
             if (!Constants.VoiceBasedChannelTypes.includes(voiceChannel.type)) {
                 const embed = new EmbedBuilder()
-                    .setColor('White')
-                    .setDescription(`<:emoji_27:1215417390880268390> | **${interaction.options.getChannel('channel')} Is Not A Valid Voice Channel.**`);
+                    .setColor('#301934')
+                    .setDescription(`<:error:1223523541987885117> | **${interaction.options.getChannel('channel')} Is Not A Valid Voice Channel.**`);
                 return interaction.reply({ embeds: [embed], ephemeral: true });
             }
         }
         
         if (!voiceChannel) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription('<:emoji_27:1215417390880268390> | **You Must Be In Or Enter A Valid Voice Channel.**');
+                .setColor('#301934')
+                .setDescription('<:error:1223523541987885117> | **You Must Be In Or Enter A Valid Voice Channel.**');
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         
         interaction.client.distube.voices.join(voiceChannel);
         
         const embed = new EmbedBuilder()
-            .setColor('White')
-            .setDescription(`<:emoji_28:1215417406433009694> | **I Have Joined ${voiceChannel}**`);
+            .setColor('#301934')
+            .setDescription(`<:music:1223525751765336074> | **I Have Joined ${voiceChannel}**`);
         await interaction.reply({ embeds: [embed], ephemeral: false });
     }
 };

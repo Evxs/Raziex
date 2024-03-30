@@ -19,9 +19,8 @@ module.exports = {
         weather.find({ search: city, degreeType: 'C' }, function(err, result) {
             if (err || typeof result !== 'object' || !result.length) {
                 const errorembed = new EmbedBuilder()
-                    .setTitle("Error")
-                    .setDescription("Please enter a valid location!")
-                    .setColor('White')
+                    .setDescription("**Please enter a valid location!**")
+                    .setColor('#301934')
                     .setTimestamp();
                 return interaction.reply({ embeds: [errorembed], ephemeral: true });
             }
@@ -33,7 +32,7 @@ module.exports = {
                 .setDescription(`**${current.skytext}**`)
                 .setAuthor({ name: `Weather for ${current.observationpoint}`})
                 .setThumbnail(current.imageUrl)
-                .setColor('White')
+                .setColor('#301934')
                 .addFields(
                     { name: 'Timezone', value: `UTC${location.timezone}`, inline: true },
                     { name: 'Degree Type', value: location.degreetype, inline: true },

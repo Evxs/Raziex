@@ -13,12 +13,12 @@ module.exports = {
                 .setDescription('**Total Commands:** 20')
                 .setThumbnail(icon)
                 .setTimestamp()
-                .setColor('White')
+                .setColor('#301934')
 
         
                 const embed = new EmbedBuilder()
                 .setTitle("AI Commands")
-                .setColor('White')
+                .setColor('#301934')
                 .setDescription('**Command Count:** 3')
                 .setThumbnail(icon)
                 .setTimestamp()
@@ -32,7 +32,7 @@ module.exports = {
                 .setDescription('**Command Count:** 1')
                 .setThumbnail(icon)
                 .setTimestamp()
-                .setColor('White')
+                .setColor('#301934')
                 .addFields({ name: "`👑` restart", value: `</restart:1212885610017193984>`, inline: true})
 
         
@@ -50,13 +50,13 @@ module.exports = {
                 .addFields({ name: "`🛠` serverinfo", value: `</serverinfo:1212919628955787345>`, inline: true})
                 .addFields({ name: "`🛠` purge", value: `</purge:1212932247603122267>`, inline: true})
                 .addFields({ name: "`🛠` suggest", value: `</suggest:1221277045427015694>`, inline: true})
-                .setColor('White')
+                .setColor('#301934')
                 
 
 
                 const embed4 = new EmbedBuilder()
                 .setTitle("Fun Commands")
-                .setColor('White')
+                .setColor('#301934')
                 .setDescription('**Command Count:** 3')
                 .setThumbnail(icon)
                 .setTimestamp()
@@ -68,7 +68,7 @@ module.exports = {
 
                 const embed5 = new EmbedBuilder()
                 .setTitle("Music Commands")
-                .setColor('White')
+                .setColor('#301934')
                 .setDescription('**Command Count:** 6')
                 .setThumbnail(icon)
                 .setTimestamp()

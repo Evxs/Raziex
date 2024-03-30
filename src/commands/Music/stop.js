@@ -10,16 +10,16 @@ module.exports = {
         const queue = interaction.client.distube.getQueue(interaction);
         if (!queue) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **There Is Nothing Playing In The Server**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **There Is Nothing Playing In The Server**`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         
         queue.stop();
         
         const embed = new EmbedBuilder()
-            .setColor('White')
-            .setDescription(`<:emoji_28:1215417406433009694> | **I Have Stopped The Music**`);
+            .setColor('#301934')
+            .setDescription(`<:music:1223525751765336074> | **I Have Stopped The Music**`);
         await interaction.reply({ embeds: [embed], ephemeral: false });
     }
 };

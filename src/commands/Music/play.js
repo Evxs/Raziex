@@ -35,8 +35,8 @@ module.exports = {
         const voiceChannel = interaction.member.voice.channel;
         if (!voiceChannel) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **You Need To Be In A VC To Play Music.**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **You Need To Be In A VC To Play Music.**`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
 
@@ -44,8 +44,8 @@ module.exports = {
 
         if (interaction.guild.members.me.voice.channel && interaction.guild.members.me.voice.channelId !== member.voice.channelId) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **You Need To Be In The Same VC As Me.**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **You Need To Be In The Same VC As Me.**`);
 
             return interaction.reply({ embeds: [embed] });
         }
@@ -70,9 +70,9 @@ module.exports = {
             const thumbnailUrl = videoInfo.videoDetails.thumbnails[0].url;
 
             const embed = new EmbedBuilder()
-                .setColor('White')
+                .setColor('#301934')
                 .setTitle('Added To Queue')
-                .setDescription(`[${song.name}](${song.url})`)
+                .setDescription(`<:music:1223525751765336074> [${song.name}](${song.url})`)
                 .setThumbnail(thumbnailUrl)
                 .addFields(
                     { name: 'Likes', value: likes, inline: true },

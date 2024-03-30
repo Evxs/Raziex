@@ -38,7 +38,7 @@ module.exports = {
         const userAvatar = user.displayAvatarURL({ size: 512 });
 
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle(`${user.tag}'s Avatar`)
             .setImage(userAvatar)
             .setTimestamp();

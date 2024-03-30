@@ -32,22 +32,22 @@ module.exports = {
         const queue = interaction.client.distube.getQueue(interaction);
         if (!queue) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription('<:emoji_27:1215417390880268390> | **There Is Nothing Playing In This Server.**');
+                .setColor('#301934')
+                .setDescription('<:error:1223523541987885117> | **There Is Nothing Playing In This Server.**');
             return interaction.reply({ embeds: [embed], ephemeral: false });
         }       
         const botVoiceChannel = queue.voiceChannel;
         if (!botVoiceChannel || (botVoiceChannel && botVoiceChannel.id !== voiceChannel.id)) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription(`<:emoji_27:1215417390880268390> | **You And The Bot Aren't In The Same VC.**`);
+                .setColor('#301934')
+                .setDescription(`<:error:1223523541987885117> | **You And The Bot Aren't In The Same VC.**`);
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         const volume = interaction.options.getInteger('level');
         if (isNaN(volume) || volume < 0 || volume > 100) {
             const embed = new EmbedBuilder()
-                .setColor('White')
-                .setDescription('<:emoji_27:1215417390880268390> | **Please Enter A Number From `1-100`**');
+                .setColor('#301934')
+                .setDescription('<:error:1223523541987885117> | **Please Enter A Number From `1-100`**');
             return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         queue.setVolume(volume);
@@ -55,8 +55,8 @@ module.exports = {
         volumeLevels[interaction.guildId] = volume;
         saveVolumeLevels(volumeLevels);
         const embed = new EmbedBuilder()
-            .setColor('White')
-            .setDescription(`<:emoji_28:1215417406433009694> | **I Set The Volume To \`${volume}%\`**`);
+            .setColor('#301934')
+            .setDescription(`<:music:1223525751765336074> | **I Set The Volume To \`${volume}%\`**`);
         await interaction.reply({ embeds: [embed], ephemeral: false });
     }
 };

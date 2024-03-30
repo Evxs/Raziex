@@ -15,7 +15,7 @@ module.exports = {
         // Check if the user has the 'MANAGE_MESSAGES' permission
         if (!member.permissions.has('MANAGE_MESSAGES')) {
             const errorEmbed = new EmbedBuilder()
-                .setColor('White')
+                .setColor('#301934')
                 .setDescription('You do not have permission to use this command.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
@@ -34,7 +34,7 @@ module.exports = {
 
         // Construct an embed to display the total number of deleted messages
         const deletedEmbed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle('Purged Messages')
             .setTimestamp()
             .setDescription(`Total Messages Deleted: ${deletedMessagesCount}`);

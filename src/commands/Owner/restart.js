@@ -5,7 +5,7 @@ const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, Embed
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('restart')
-        .setDescription('🔄 | Restart the bot'),
+        .setDescription('Restart the bot'),
 
     async execute(interaction) {
         const allowedUserID = '1120856443659235498';

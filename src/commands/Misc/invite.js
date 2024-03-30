@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(interaction) {
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle(`🔗 | Bot Invite`)
             .setDescription(`**Invite Me To Your Server Using The Links Below**`)
             .setTimestamp();

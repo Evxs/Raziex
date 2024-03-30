@@ -23,7 +23,7 @@ module.exports = {
                 fs.writeFileSync(filePath, updatedChannelIds.join('\n'));
                
                 const disableEmbed = new EmbedBuilder()
-                    .setColor('White')
+                    .setColor('#301934')
                     .setTitle('Chatbot Disabled')
                     .setDescription(`**Channel:** <#${interaction.channelId}>`)
                 await interaction.reply({ embeds: [disableEmbed], ephemeral: true });
@@ -32,7 +32,7 @@ module.exports = {
                 fs.appendFileSync(filePath, `\n${channelId}`);
              
                 const enableEmbed = new EmbedBuilder()
-                    .setColor('White')
+                    .setColor('#301934')
                     .setTitle('Chatbot Enabled')
                     .setDescription(`**Channel:** <#${interaction.channelId}>`)
                 await interaction.reply({ embeds: [enableEmbed], ephemeral: true });
@@ -42,7 +42,7 @@ module.exports = {
             fs.writeFileSync(filePath, channelId);
           
             const enableEmbed = new EmbedBuilder()
-                .setColor('White')
+                .setColor('#301934')
                 .setTitle('Chatbot Enabled')
                 .setDescription(`**Channel:** <#${interaction.channelId}>`)
             await interaction.reply({ embeds: [enableEmbed], ephemeral: true });

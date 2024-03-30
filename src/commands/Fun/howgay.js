@@ -18,7 +18,7 @@ module.exports = {
         const gayness = Math.floor(Math.random() * 101); // Random gayness level between 0 and 100
 
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTitle('🏳‍🌈 | Howgay')
             .setDescription(`🏳‍🌈 | ${targetUser.username} Is ${gayness}% gay.`);
 

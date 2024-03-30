@@ -12,7 +12,7 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTimestamp()
             .setTitle(`Server Information for ${guild.name}`)
             .setThumbnail(guild.iconURL({ dynamic: true, size: 256 }))
@@ -48,7 +48,7 @@ module.exports = {
             if (buttonInteraction.customId === 'server_roles') {
                 const roles = guild.roles.cache.filter(role => role.name !== '@everyone').map(role => role.toString()).join(', ');
                 const rolesEmbed = new EmbedBuilder()
-                    .setColor('White')
+                    .setColor('#301934')
                     .setTitle('Server Roles')
                     .setTimestamp()
                     .setDescription(roles || 'There are no roles in this server.');

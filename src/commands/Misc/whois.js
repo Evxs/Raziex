@@ -37,7 +37,7 @@ module.exports = {
         }
 
         const embed = new EmbedBuilder()
-            .setColor('White')
+            .setColor('#301934')
             .setTimestamp()
             .setTitle(`User Information for ${user.tag}`)
             .setThumbnail(user.displayAvatarURL({ dynamic: true, size: 256 }))
@@ -71,7 +71,7 @@ module.exports = {
                         if (buttonInteraction.customId === 'view_roles') {
                             await buttonInteraction.deferUpdate();
                             const rolesEmbed = new EmbedBuilder()
-                                .setColor('White')
+                                .setColor('#301934')
                                 .setTitle(`Roles of ${user.tag}`)
                                 .setTimestamp()
                                 .setDescription(memberData.roles.cache.filter(r => r.id !== guild.id).map(r => r.toString()).join(' ') || 'This user has no roles in this server.');
